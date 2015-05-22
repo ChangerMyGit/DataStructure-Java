@@ -14,7 +14,7 @@ public class HeapDemo {
 		// heap.delMax();
 		for (int i = 0; i < a.length; i++)
 			System.out.print(heap.delMax() + " ");
-		// System.out.println(Arrays.toString(heap.toArray()));
+		System.out.println(Arrays.toString(heap.toArray()));
 	}
 
 }
