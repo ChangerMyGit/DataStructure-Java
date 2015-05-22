@@ -68,11 +68,13 @@ public class TreeDemo {
 		tree.printBtree();*/
 		//System.out.println(Arrays.toString(x.getKey().toArray()));
 		//tree.printBtree();
+		int[] a = {12, 1 ,9 ,2 ,0, 11 ,7 ,19, 4 ,15 ,18, 5 ,14 ,13, 10, 16, 6 ,3, 8 ,17};
 		RedBlackTree<Integer> tree = new RedBlackTree<Integer>();
-		for (int i = 1; i < 20; i++)
-			tree.insert(i);
-		for (int i = 1; i < 15; i++)
-			tree.remove(i);
+		for (int i = 0; i < a.length; i++)
+			tree.insert(a[i]);
+//		for (int i = 1; i < 40; i++)
+//			tree.remove(i);
+		//tree.remove(5);
 		tree.travLevel(tree.getRoot());
 	}
 }
