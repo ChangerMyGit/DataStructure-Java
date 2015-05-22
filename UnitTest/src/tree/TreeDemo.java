@@ -74,7 +74,7 @@ public class TreeDemo {
 			tree.insert(a[i]);
 //		for (int i = 1; i < 40; i++)
 //			tree.remove(i);
-		//tree.remove(5);
+//      tree.remove(5);
 		tree.travLevel(tree.getRoot());
 	}
 }
