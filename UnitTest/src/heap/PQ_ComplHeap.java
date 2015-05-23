@@ -2,8 +2,6 @@ package heap;
 
 import java.util.ArrayList;
 
-import sun.misc.Compare;
-
 /**
  * 优先队列
  * 
@@ -11,7 +9,7 @@ import sun.misc.Compare;
  * 
  * @param <T>
  */
-@SuppressWarnings("serial")
+@SuppressWarnings({ "rawtypes", "serial" })
 public class PQ_ComplHeap<T extends Comparable> extends ArrayList<T> {
 
 	// 对向量前n个词条中的第i个实施下滤，i < n
@@ -36,7 +34,12 @@ public class PQ_ComplHeap<T extends Comparable> extends ArrayList<T> {
 	}
 
 	protected void heapify(int n) {
-
+		for (Integer i = 1; i <= n; i++) {
+			add((T) i);
+		}
+		for (int i = lastInternal(n); i >= 0; i--) {
+			percolateDown(i);// 下滤各内部节点
+		}
 	}
 
 	public void insert(T e) {
@@ -92,5 +95,10 @@ public class PQ_ComplHeap<T extends Comparable> extends ArrayList<T> {
 			max = rc;
 		}
 		return max;
+	}
+
+	// 最后一个内部节点 即末节点的父亲
+	private int lastInternal(int n) {
+		return parent(n - 1);
 	}
 }
